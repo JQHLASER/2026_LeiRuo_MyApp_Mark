@@ -38,11 +38,6 @@
             this.uiPanel_激光图像 = new Sunny.UI.UIPanel();
             this.uiPanel_Log = new Sunny.UI.UIPanel();
             this.uiPanel_工作区右 = new Sunny.UI.UIPanel();
-            this.uiLabel_加工信息 = new Sunny.UI.UILabel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.uiButton_激光模板 = new Sunny.UI.UIButton();
-            this.uiButton_扫码 = new Sunny.UI.UIButton();
             this.uiPanel_加工显示条 = new Sunny.UI.UIPanel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.系统ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -67,8 +62,6 @@
             this.tableLayoutPanel_工作区.SuspendLayout();
             this.uiPanel_工作区中.SuspendLayout();
             this.uiPanel_工作区右.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -168,8 +161,6 @@
             // uiPanel_工作区右
             // 
             this.uiPanel_工作区右.BackColor = System.Drawing.Color.Transparent;
-            this.uiPanel_工作区右.Controls.Add(this.uiLabel_加工信息);
-            this.uiPanel_工作区右.Controls.Add(this.panel1);
             this.uiPanel_工作区右.Controls.Add(this.uiPanel_加工显示条);
             this.uiPanel_工作区右.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel_工作区右.FillColor = System.Drawing.Color.WhiteSmoke;
@@ -185,71 +176,6 @@
             this.uiPanel_工作区右.StyleCustomMode = true;
             this.uiPanel_工作区右.TabIndex = 2;
             this.uiPanel_工作区右.Text = null;
-            // 
-            // uiLabel_加工信息
-            // 
-            this.uiLabel_加工信息.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiLabel_加工信息.Font = new System.Drawing.Font("微软雅黑", 11.89565F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiLabel_加工信息.Location = new System.Drawing.Point(0, 70);
-            this.uiLabel_加工信息.Name = "uiLabel_加工信息";
-            this.uiLabel_加工信息.Padding = new System.Windows.Forms.Padding(5);
-            this.uiLabel_加工信息.Size = new System.Drawing.Size(296, 346);
-            this.uiLabel_加工信息.Style = Sunny.UI.UIStyle.Custom;
-            this.uiLabel_加工信息.TabIndex = 2;
-            this.uiLabel_加工信息.Text = "uiLabel1";
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.tableLayoutPanel1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(10);
-            this.panel1.Size = new System.Drawing.Size(296, 70);
-            this.panel1.TabIndex = 3;
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 10F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.uiButton_激光模板, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.uiButton_扫码, 0, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(10, 10);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(276, 50);
-            this.tableLayoutPanel1.TabIndex = 0;
-            // 
-            // uiButton_激光模板
-            // 
-            this.uiButton_激光模板.Cursor = System.Windows.Forms.Cursors.Default;
-            this.uiButton_激光模板.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiButton_激光模板.Font = new System.Drawing.Font("微软雅黑", 9F);
-            this.uiButton_激光模板.Location = new System.Drawing.Point(146, 3);
-            this.uiButton_激光模板.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiButton_激光模板.Name = "uiButton_激光模板";
-            this.uiButton_激光模板.Size = new System.Drawing.Size(127, 44);
-            this.uiButton_激光模板.Style = Sunny.UI.UIStyle.Custom;
-            this.uiButton_激光模板.TabIndex = 4;
-            this.uiButton_激光模板.Text = "激光模板";
-            // 
-            // uiButton_扫码
-            // 
-            this.uiButton_扫码.Cursor = System.Windows.Forms.Cursors.Default;
-            this.uiButton_扫码.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiButton_扫码.Font = new System.Drawing.Font("微软雅黑", 9F);
-            this.uiButton_扫码.Location = new System.Drawing.Point(3, 3);
-            this.uiButton_扫码.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiButton_扫码.Name = "uiButton_扫码";
-            this.uiButton_扫码.Size = new System.Drawing.Size(127, 44);
-            this.uiButton_扫码.Style = Sunny.UI.UIStyle.Custom;
-            this.uiButton_扫码.TabIndex = 0;
-            this.uiButton_扫码.Text = "扫码";
             // 
             // uiPanel_加工显示条
             // 
@@ -367,43 +293,43 @@
             // ezCad2ToolStripMenuItem
             // 
             this.ezCad2ToolStripMenuItem.Name = "ezCad2ToolStripMenuItem";
-            this.ezCad2ToolStripMenuItem.Size = new System.Drawing.Size(217, 26);
+            this.ezCad2ToolStripMenuItem.Size = new System.Drawing.Size(149, 26);
             this.ezCad2ToolStripMenuItem.Text = "EzCad2";
             // 
             // 激光_打开ToolStripMenuItem
             // 
             this.激光_打开ToolStripMenuItem.Name = "激光_打开ToolStripMenuItem";
-            this.激光_打开ToolStripMenuItem.Size = new System.Drawing.Size(217, 26);
+            this.激光_打开ToolStripMenuItem.Size = new System.Drawing.Size(149, 26);
             this.激光_打开ToolStripMenuItem.Text = "打开";
             // 
             // 激光_复位ToolStripMenuItem
             // 
             this.激光_复位ToolStripMenuItem.Name = "激光_复位ToolStripMenuItem";
-            this.激光_复位ToolStripMenuItem.Size = new System.Drawing.Size(217, 26);
+            this.激光_复位ToolStripMenuItem.Size = new System.Drawing.Size(149, 26);
             this.激光_复位ToolStripMenuItem.Text = "复位";
             // 
             // 激光_调试ToolStripMenuItem
             // 
             this.激光_调试ToolStripMenuItem.Name = "激光_调试ToolStripMenuItem";
-            this.激光_调试ToolStripMenuItem.Size = new System.Drawing.Size(217, 26);
+            this.激光_调试ToolStripMenuItem.Size = new System.Drawing.Size(149, 26);
             this.激光_调试ToolStripMenuItem.Text = "调试";
             // 
             // 激光_加工ToolStripMenuItem
             // 
             this.激光_加工ToolStripMenuItem.Name = "激光_加工ToolStripMenuItem";
-            this.激光_加工ToolStripMenuItem.Size = new System.Drawing.Size(217, 26);
+            this.激光_加工ToolStripMenuItem.Size = new System.Drawing.Size(149, 26);
             this.激光_加工ToolStripMenuItem.Text = "加工";
             // 
             // 激光_红光ToolStripMenuItem
             // 
             this.激光_红光ToolStripMenuItem.Name = "激光_红光ToolStripMenuItem";
-            this.激光_红光ToolStripMenuItem.Size = new System.Drawing.Size(217, 26);
+            this.激光_红光ToolStripMenuItem.Size = new System.Drawing.Size(149, 26);
             this.激光_红光ToolStripMenuItem.Text = "红光";
             // 
             // 激光_停止ToolStripMenuItem
             // 
             this.激光_停止ToolStripMenuItem.Name = "激光_停止ToolStripMenuItem";
-            this.激光_停止ToolStripMenuItem.Size = new System.Drawing.Size(217, 26);
+            this.激光_停止ToolStripMenuItem.Size = new System.Drawing.Size(149, 26);
             this.激光_停止ToolStripMenuItem.Text = "停止";
             // 
             // ui_状态栏1
@@ -480,8 +406,6 @@
             this.tableLayoutPanel_工作区.ResumeLayout(false);
             this.uiPanel_工作区中.ResumeLayout(false);
             this.uiPanel_工作区右.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -517,10 +441,5 @@
         private System.Windows.Forms.ToolStripMenuItem 激光_停止ToolStripMenuItem;
         public System.Windows.Forms.ToolStripMenuItem 激光_复位ToolStripMenuItem;
         public Sunny.UI.UIPanel uiPanel_加工显示条;
-        public Sunny.UI.UILabel uiLabel_加工信息;
-        private System.Windows.Forms.Panel panel1;
-        private Sunny.UI.UIButton uiButton_扫码;
-        private Sunny.UI.UIButton uiButton_激光模板;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
     }
 }

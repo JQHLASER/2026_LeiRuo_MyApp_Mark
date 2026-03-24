@@ -132,26 +132,6 @@
     <Compile Include="加工类\IO.cs" />
     <Compile Include="加工类\加工.cs" />
     <Compile Include="加工类\加工类.cs" />
-    <Compile Include="定制\Form_扫码.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="定制\Form_扫码.Designer.cs">
-      <DependentUpon>Form_扫码.cs</DependentUpon>
-    </Compile>
-    <Compile Include="定制\http\Http_数据.cs" />
-    <Compile Include="定制\序列号\序列号.cs" />
-    <Compile Include="定制\数据库\Db.cs" />
-    <Compile Include="定制\数据库\db_序列号.cs" />
-    <Compile Include="定制\http\http_.cs" />
-    <Compile Include="定制\序列号\Form_序列号设置.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="定制\序列号\Form_序列号设置.Designer.cs">
-      <DependentUpon>Form_序列号设置.cs</DependentUpon>
-    </Compile>
-    <Compile Include="定制\显示Mes.cs" />
-    <Compile Include="定制\系统参数.cs" />
-    <Compile Include="定制\数据库\表.cs" />
     <Compile Include="激光\LaserMark.cs" />
     <Compile Include="系统类\Err\Err.cs" />
     <Compile Include="系统类\Main\启动时自检_.cs" />
@@ -191,12 +171,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainWin\Form_宣传.resx">
       <DependentUpon>Form_宣传.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="定制\Form_扫码.resx">
-      <DependentUpon>Form_扫码.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="定制\序列号\Form_序列号设置.resx">
-      <DependentUpon>Form_序列号设置.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="系统类\功能\设置窗体大小\Win_Size\Form_Size.resx">
       <DependentUpon>Form_Size.cs</DependentUpon>

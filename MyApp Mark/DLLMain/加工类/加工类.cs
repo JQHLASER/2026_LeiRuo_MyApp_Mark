@@ -85,11 +85,7 @@ namespace DLLMain
             List<string> lswork = new List<string>()
             {
                 "Err",
-                "Err激光",
-                "获取Sn",
-                "判断Sn是否达到最大值",
-                "递增Sn",
-                "修改加工信息",
+                "Err激光", 
                 "出激光加工",
             };
 
@@ -104,12 +100,7 @@ namespace DLLMain
                 else if (s == "Err")
                 {
                     #region Err
-
-                    if (!Err.请查询工单(out msgerr)
-                        || !Err.未获取到工单数据(out msgErr))
-                    {
-                        rt = false;
-                    }
+ 
 
 
                     #endregion
@@ -143,48 +134,7 @@ namespace DLLMain
 
                     #endregion
                 }
-                else if (s == "获取Sn")
-                {
-                    #region 获取Sn
-
-                    var rtSn = db_序列号.Get_查询(系统参数._参数.工单号);
-                    rt = rtSn.s;
-                    msgErr = rtSn.m;
-                    序列号._序列号 = rtSn.Sn;
-                    显示Mes.显示Mes信息();
-                    #endregion
-                }
-                else if (s == "判断Sn是否达到最大值")
-                {
-                    #region 判断Sn是否达到最大值
-                    rt = int.TryParse(序列号._序列号, out int sn);
-                    if (rt && sn > 系统参数._参数.Clone().MesValue.Qty)
-                    {
-                        rt = false;
-                        msgerr = $"序列号已达到工单数量,<Sn:{sn}><{系统参数._参数.Clone().MesValue.Qty}>";
-                        Log.Add(rt, msgerr);
-                    }
-
-                    #endregion
-                }
-                else if (s == "递增Sn")
-                {
-                    #region 递增Sn 
-
-                    var rtSn = 序列号.递增();
-                    rt = rtSn.s;
-                    msgerr = rtSn.m;
-
-                    #endregion
-                }
-                else if (s == "修改加工信息")
-                {
-                    #region 修改加工信息
-
-                    修改变量信息(序列号._序列号);
-
-                    #endregion
-                }
+         
             }
 
 
@@ -222,39 +172,7 @@ namespace DLLMain
             return rt;
         }
 
-        internal void 修改变量信息(string 序列号)
-        {
-            Http_数据._values_ cfg = 系统参数._参数.Clone().MesValue;
-            LaserMark._Iwork.修改对象内容("流转卡号", cfg.MachiningId);
-            LaserMark._Iwork.修改对象内容("产品型号", cfg.ProductName);
-            LaserMark._Iwork.修改对象内容("Bom版本号", cfg.BomVersion);
-            LaserMark._Iwork.修改对象内容("工单数量", cfg.Qty.ToString ());
-
-
-            LaserMark._Iwork.修改对象内容("MachiningId", cfg.MachiningId);
-            LaserMark._Iwork.修改对象内容("ProductName", cfg.ProductName);
-            LaserMark._Iwork.修改对象内容("BomVersion", cfg.BomVersion);
-            LaserMark._Iwork.修改对象内容("Qty", cfg.Qty.ToString ());
-
-            //if (!string.IsNullOrEmpty(cfg.MachiningId ))
-            //{
-            //    LaserMark._Iwork.修改对象内容("流转卡号", cfg.MachiningId );
-            //}
-            //if (!string.IsNullOrEmpty(cfg.ProductName ))
-            //{
-            //    LaserMark._Iwork.修改对象内容("产品型号", cfg.ProductName );
-            //}
-            //if (!string.IsNullOrEmpty(cfg.Line3))
-            //{
-            //    LaserMark._Iwork.修改对象内容("Line3", cfg.Line3);
-            //}
-            //if (!string.IsNullOrEmpty(cfg.Line4))
-            //{
-            //    LaserMark._Iwork.修改对象内容("Line4", cfg.Line4);
-            //}
-            LaserMark._Iwork.修改对象内容("Sn", 序列号);
-            LaserMark.刷新图形();
-        }
+  
 
         #region  方法...IO输出
 

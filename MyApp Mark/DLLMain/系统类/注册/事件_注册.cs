@@ -44,7 +44,7 @@ namespace DLLMain
                 //});
                  
 
-                new Db();//数据库 
+              
 
             }
             //未注册

@@ -50,9 +50,7 @@ namespace DLLMain
 
             事件_用户.On_用户登陆();//用户登陆
 
-            FormMain.forms.uiLabel_加工信息.Text = "";
-            系统参数.初始化();
-
+          
 
             注册.注册_进入系统时();//系统注册
 
