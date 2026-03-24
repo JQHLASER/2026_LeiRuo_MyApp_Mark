@@ -130,32 +130,7 @@ namespace DLLMain
             #endregion
 
 
-            this.uiButton_扫码.Click += (s, e) =>
-            {
-                if (!Err.系统报警(out string msg, false)
-                || !Err.系统忙(out msg, false))
-                {
-                    MessageBox.Show(msg, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-                using (Form_扫码 forms = new Form_扫码())
-                {
-                    Log.Add("进入扫码窗体....");
-                    forms.ShowDialog();
-                    var rtSn = db_序列号.Get_查询(系统参数._参数.工单号);
-                    if (rtSn.s)
-                    { 
-                        加工._加工.修改变量信息(rtSn.Sn);
-                    }
-                    Log.Add("....关闭扫码窗体");
-                }
-            };
-
-            this.uiButton_激光模板.Click += (s, e) =>
-            {
-                激光_打开模板();
-            };
-
+         
 
 
             #region 语言
