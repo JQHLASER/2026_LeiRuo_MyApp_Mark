@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CA296168-4A75-402B-8B0E-9073C9B33D32}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AppDLL</RootNamespace>
+    <AssemblyName>AppDLL</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Model26, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\2026\QFClass26\功能模块\功能模块1\Model26\bin\Release\Model26.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\2026\QFClass26\QFclass2026\QF_2026_ClassMain\bin\Release\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="QF_CodeBm_26, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\2026\QFClass26\QFclass2026\QF_CodeBm_26\bin\Release\QF_CodeBm_26.dll</HintPath>
+    </Reference>
+    <Reference Include="QF_Iwork_26, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\2026\QFClass26\QFclass2026\QF_Iwork_26\bin\Release\QF_Iwork_26.dll</HintPath>
+    </Reference>
+    <Reference Include="QF_LaserMark_26, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\2026\QFClass26\QFclass2026\QF_LaserMark_26\bin\Release\QF_LaserMark_26.dll</HintPath>
+    </Reference>
+    <Reference Include="QF_MainClass_26, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\2026\QFClass26\QFclass2026\QF_2026_ClassMain\bin\Release\QF_MainClass_26.dll</HintPath>
+    </Reference>
+    <Reference Include="QF_MyApp26_, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\2026\QFClass26\QFclass2026\QF_MyApp26_\bin\Release\QF_MyApp26_.dll</HintPath>
+    </Reference>
+    <Reference Include="QF_Pipe_26, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\2026\QFClass26\QFclass2026\QF_Pipe_26\bin\Release\QF_Pipe_26.dll</HintPath>
+    </Reference>
+    <Reference Include="QF_PLC_26, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\2026\QFClass26\QFclass2026\QF_PLC_26\bin\Release\QF_PLC_26.dll</HintPath>
+    </Reference>
+    <Reference Include="QF_SqlSugar_26, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\2026\QFClass26\QFclass2026\QF_SqlSugar_26\bin\Release\QF_SqlSugar_26.dll</HintPath>
+    </Reference>
+    <Reference Include="QF_WebServices_26, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\2026\QFClass26\QFclass2026\QF_WebServices_26\bin\Release\QF_WebServices_26.dll</HintPath>
+    </Reference>
+    <Reference Include="QF_WinForm_26, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\2026\QFClass26\QFclass2026\QF_WinForm_26\bin\Release\QF_WinForm_26.dll</HintPath>
+    </Reference>
+    <Reference Include="SqlSugar, Version=5.1.4.207, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\2026\QFClass26\QFclass2026\QF_SqlSugar_26\bin\Release\SqlSugar.dll</HintPath>
+    </Reference>
+    <Reference Include="SunnyUI8, Version=2.2.9.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\2026\QFClass26\Control_Notes\SunnyUI\Bin\SunnyUI8.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="1.主窗体\classMaim\Form_Main_class.cs" />
+    <Compile Include="1.主窗体\classMaim\功能栏.cs" />
+    <Compile Include="1.主窗体\classMaim\状态栏.cs" />
+    <Compile Include="1.主窗体\classMaim\窗体标题栏.cs" />
+    <Compile Include="1.主窗体\Form_Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="1.主窗体\Form_Main.Designer.cs">
+      <DependentUpon>Form_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="1.主窗体\classMaim\Log.cs" />
+    <Compile Include="1.主窗体\菜单\菜单.cs" />
+    <Compile Include="1.主窗体\菜单\菜单类\4.菜单_Zaxis.cs" />
+    <Compile Include="1.主窗体\菜单\菜单类\3.菜单_激光.cs" />
+    <Compile Include="1.主窗体\菜单\菜单类\2.菜单_login用户.cs" />
+    <Compile Include="1.主窗体\菜单\菜单类\1.菜单_系统.cs" />
+    <Compile Include="1.主窗体\菜单\菜单类\99.菜单_按钮.cs" />
+    <Compile Include="1.主窗体\设置窗体大小\Size_FormMain.cs" />
+    <Compile Include="1.主窗体\设置窗体大小\Form_Size.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="1.主窗体\设置窗体大小\Form_Size.Designer.cs">
+      <DependentUpon>Form_Size.cs</DependentUpon>
+    </Compile>
+    <Compile Include="2.系统类\Err_.cs" />
+    <Compile Include="2.系统类\sys\Login用户.cs" />
+    <Compile Include="2.系统类\事件\Event_FormMain.cs" />
+    <Compile Include="2.系统类\事件\Event_软件注册结果.cs" />
+    <Compile Include="2.系统类\事件\Event_Longin用户登陆.cs" />
+    <Compile Include="2.系统类\功能.cs" />
+    <Compile Include="2.系统类\接口_对主程序\MainIwork.cs" />
+    <Compile Include="2.系统类\sys\显示.cs" />
+    <Compile Include="2.系统类\sys\生产计数.cs" />
+    <Compile Include="2.系统类\sys\Help_软件信息.cs" />
+    <Compile Include="2.系统类\系统设置\Form_系统设置.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="2.系统类\系统设置\Form_系统设置.Designer.cs">
+      <DependentUpon>Form_系统设置.cs</DependentUpon>
+    </Compile>
+    <Compile Include="2.系统类\系统设置\系统设置.cs" />
+    <Compile Include="3.加工类\加工类_.cs" />
+    <Compile Include="4.工业类\Zaxis\Zaxis_运动轴.cs" />
+    <Compile Include="5.激光类\LaserMark.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="2.系统类\接口_对主程序\开机自检.cs" />
+    <Compile Include="2.系统类\语言\LanguageList_.cs" />
+    <Compile Include="2.系统类\语言\Languages.cs" />
+    <Compile Include="4.工业类\IO.cs" />
+    <Compile Include="3.加工类\加工class.cs" />
+    <Compile Include="4.工业类\Zaxis\Zaxis_.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="1.主窗体\Form_Main.resx">
+      <DependentUpon>Form_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="1.主窗体\设置窗体大小\Form_Size.resx">
+      <DependentUpon>Form_Size.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="2.系统类\系统设置\Form_系统设置.resx">
+      <DependentUpon>Form_系统设置.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>del "$(TargetDir)*.xml" /q
+rd /s /q "$(ProjectDir)obj"</PostBuildEvent>
+  </PropertyGroup>
+</Project>

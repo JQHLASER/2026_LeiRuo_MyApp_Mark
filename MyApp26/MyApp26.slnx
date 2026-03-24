@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="../AppDLL/AppDLL.csproj" Id="ca296168-4a75-402b-8b0e-9073c9b33d32" />
+  <Project Path="MyApp26.csproj" />
+</Solution>
