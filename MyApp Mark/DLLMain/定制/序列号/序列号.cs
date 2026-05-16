@@ -12,7 +12,7 @@ namespace DLLMain
     internal class 序列号
     {
         internal static string _序列号 = "001";
-  
+
         internal static (bool s, string m, string sn) 递增()
         {
             bool rt = true;
@@ -33,7 +33,7 @@ namespace DLLMain
                 工单 = 系统参数._参数.工单号,
                 序列号 = v,
             });
-             
+
             rt = rtDb.s;
             msg = rtDb.m;
             Log.Add(rt, msg);
@@ -68,7 +68,7 @@ namespace DLLMain
             {
                 var rtSn = db_序列号.Get_查询(系统参数._参数.工单号);
                 _序列号 = rtSn.Sn;
-             
+
                 显示Mes.显示Mes信息();
 
                 msg = $"手动,设置序列号,成功";
@@ -110,8 +110,10 @@ namespace DLLMain
             {
                 var rtSn = db_序列号.Get_查询(系统参数._参数.工单号);
                 _序列号 = rtSn.Sn;
-            
+
                 显示Mes.显示Mes信息();
+
+                var r = CSV.Save(序列号._序列号, "加工");
 
                 msg = $"手动,复位序列号,成功";
                 Log.Add($"{msg},{JsonConvert.SerializeObject(tabel)}");

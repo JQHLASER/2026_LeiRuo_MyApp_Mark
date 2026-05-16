@@ -41,7 +41,7 @@ namespace DLLMain
                     {
                         this.Text = 系统参数._参数.工单号;
                         系统参数._参数.MesValue = rt.cfg.result;
-                        系统参数.读写(0);
+                        系统参数.读写(0); 
                         加工._加工.修改变量信息(序列号._序列号);
                         MessageBox.Show("成功");
                         return;
@@ -88,6 +88,7 @@ namespace DLLMain
                 var rt = 序列号.复位序列号();
                 if (rt.s)
                 {
+                    var rtcsv = CSV.Save(序列号._序列号, "设置<非加工>,复位");
                     MessageBox.Show(rt.m);
                 }
                 else

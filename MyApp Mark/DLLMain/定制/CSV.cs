@@ -11,7 +11,7 @@ namespace DLLMain
     {
 
 
-        internal static async Task<(bool s, string m)> Save(string 序列号)
+        internal static async Task<(bool s, string m)> Save(string 序列号, string 说明)
         {
             List<string> lst = new List<string>();
             List<string[]> lstStr = new List<string[]>();
@@ -33,6 +33,7 @@ namespace DLLMain
                     "BomVersion",
                     "Qty",
                     "Sn",
+                    "加工",
                 };
 
                 lstStr.Add(lst.ToArray());
@@ -45,10 +46,11 @@ namespace DLLMain
                     cfg.ProductName,
                     cfg.BomVersion,
                     cfg.MachiningId,
-                     cfg.ProductName,
-                     cfg.BomVersion,
+                    cfg.ProductName,
+                    cfg.BomVersion,
                     cfg.Qty.ToString(),
                     序列号,
+                    说明 ,
                 };
             lstStr.Add(lst.ToArray());
 

@@ -185,7 +185,7 @@ namespace DLLMain
 
                     修改变量信息(序列号._序列号);
 
-                    var rtcsv = CSV.Save(序列号._序列号);
+                    var rtcsv = CSV.Save(序列号._序列号,"加工");
                  
                     #endregion
                 }

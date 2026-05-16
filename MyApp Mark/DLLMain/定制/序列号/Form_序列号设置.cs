@@ -40,6 +40,10 @@ namespace DLLMain
                     MessageBox.Show(rt.m, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
+                else
+                {
+                    var rtcsv = CSV.Save(序列号._序列号, "设置<非加工>,手动设置");
+                }
                 MessageBox.Show(rt.m); 
 
             };
