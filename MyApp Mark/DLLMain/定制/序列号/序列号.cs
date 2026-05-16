@@ -33,7 +33,7 @@ namespace DLLMain
                 工单 = 系统参数._参数.工单号,
                 序列号 = v,
             });
-             
+
             rt = rtDb.s;
             msg = rtDb.m;
             Log.Add(rt, msg);
