@@ -1,0 +1,45 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	   
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <ApplicationIcon>商标.ico</ApplicationIcon>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+  </Target>
+
+  <ItemGroup>
+    <Content Include="商标.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Costura.Fody" Version="6.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="SqlSugarCore" Version="5.1.4.214" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.9.1" />
+    <PackageReference Include="System.Diagnostics.DiagnosticSource" Version="10.0.5" />
+    <PackageReference Include="System.IO" Version="4.3.0" />
+    <PackageReference Include="System.IO.Ports" Version="10.0.5" />
+    <PackageReference Include="System.Text.Encoding.CodePages" Version="10.0.5" />
+    <PackageReference Include="System.Text.Json" Version="10.0.5" />
+  
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AppDLL\AppDLL.csproj" />
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="call &quot;$(ProjectDir)CleanPartialRuntimes.bat&quot; &quot;$(TargetDir)runtimes&quot;&#xD;&#xA;" />
+  </Target>
+
+</Project>
