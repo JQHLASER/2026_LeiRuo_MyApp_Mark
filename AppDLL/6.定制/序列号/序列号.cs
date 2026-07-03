@@ -132,6 +132,12 @@ namespace AppDLL
             Log.Add($"...进入序列号设置窗体,<工单:{工单}>");
             using (Form_序列号 forms = new Form_序列号())
             {
+                string Sn = "";
+
+                forms.Load += (s, e) =>
+                {
+
+                };
 
                 forms.uiButton_确定.Click += async (s, e) =>
                 {
@@ -159,7 +165,8 @@ namespace AppDLL
                         显示加工信息.显示Mes信息(text);
                         Log.Add($"设置序列号成功,<{工单}><序列号:{text}>");
 
-                        await CSV.Save(new Http_数据._values_(), 系统设置._参数.工单号, text, $"人工修改序列号,{text},<工单:{工单}>");
+                        await CSV.Save(new Http_数据._values_(), 系统设置._参数.工单号, text, $"人工修改序列号,<原:{Sn}><新:{text}>,<工单:{工单}>");
+                        Sn = text;
 
                         return;
                     }
@@ -173,7 +180,9 @@ namespace AppDLL
                     MessageBox.Show($"查询工单失败\r\n{rt.m}", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
+
                 forms.uiTextBox1.Text = rt.sn;
+                Sn = rt.sn;
                 forms.ShowDialog();
 
             }

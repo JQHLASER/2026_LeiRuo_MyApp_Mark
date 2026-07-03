@@ -11,14 +11,20 @@ namespace AppDLL
     {
 
 
-        internal static async Task<(bool s, string m)> Save(Http_数据._values_ cfg, string 工单号,string 序列号, string 说明)
+        internal static async Task<(bool s, string m)> Save(Http_数据._values_ cfg, string 工单号, string 序列号, string 说明)
         {
             List<string> lst = new List<string>();
             List<string[]> lstStr = new List<string[]>();
 
             string fileCsv = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "CSV");
+            string file工单 = Path.Combine(fileCsv, 工单号);
+
+
             new QF_MainClass_26.文件_文件夹().文件夹_新建(fileCsv, out string msgErr);
-            string pathCsv = Path.Combine(fileCsv, $"{DateTime.Now.ToString("yyyy-MM-dd")}_{工单号 }.csv");
+            new QF_MainClass_26.文件_文件夹().文件夹_新建(file工单, out msgErr);
+
+
+            string pathCsv = Path.Combine(file工单, $"{DateTime.Now.ToString("yyyy-MM-dd")}.csv");
 
             if (!new QF_MainClass_26.文件_文件夹().文件_是否存在(pathCsv))
             {
@@ -34,7 +40,7 @@ namespace AppDLL
                     "BomVersion",
                     "Qty",
                     "Sn",
-                    "加工",
+                    "说明",
                 };
 
                 lstStr.Add(lst.ToArray());
