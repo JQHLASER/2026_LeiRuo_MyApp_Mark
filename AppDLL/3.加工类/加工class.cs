@@ -1,4 +1,4 @@
-﻿using DLLMain;
+﻿
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -87,11 +87,11 @@ namespace AppDLL
 
             List<string> lswork = new List<string>()
             {
-              //  "Err",
+                "Err",
                 "Err激光",
 
                 "获取Sn",
-              //  "判断Sn是否达到最大值",
+                "判断Sn是否达到最大值",
                 "递增Sn",
                 "修改加工信息",
 

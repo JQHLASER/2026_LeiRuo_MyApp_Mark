@@ -24,13 +24,17 @@ namespace AppDLL
         }
 
         internal static _cfg_ _参数 = new _cfg_();
+        private static readonly object _lockRead = new object();
         internal static (bool s, string msgErr) 读写参数(ushort model)
         {
-            string path = Path.Combine(QF_MainClass_26.软件类.Files_Cfg.Files_sysConfig, "sysCfg.txt");
-            _cfg_ cfg = _参数;
-            bool rt = new QF_MainClass_26.文件_文件夹().WriteReadJson(path, model, ref cfg, out string msgErr);
-            _参数 = cfg;
-            return (rt, msgErr);
+            lock (_lockRead)
+            {
+                string path = Path.Combine(QF_MainClass_26.软件类.Files_Cfg.Files_sysConfig, "sysCfg.txt");
+                _cfg_ cfg = _参数;
+                bool rt = new QF_MainClass_26.文件_文件夹().WriteReadJson(path, model, ref cfg, out string msgErr);
+                _参数 = cfg;
+                return (rt, msgErr);
+            }
         }
 
 

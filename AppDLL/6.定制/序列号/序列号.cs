@@ -1,4 +1,4 @@
-﻿using DLLMain;
+﻿
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -159,7 +159,7 @@ namespace AppDLL
                         显示加工信息.显示Mes信息(text);
                         Log.Add($"设置序列号成功,<{工单}><序列号:{text}>");
 
-                        await CSV.Save(new Http_数据._values_(), 系统设置._参数.工单号, text, $"人工修改序列号,<工单:{工单}>");
+                        await CSV.Save(new Http_数据._values_(), 系统设置._参数.工单号, text, $"人工修改序列号,{text},<工单:{工单}>");
 
                         return;
                     }

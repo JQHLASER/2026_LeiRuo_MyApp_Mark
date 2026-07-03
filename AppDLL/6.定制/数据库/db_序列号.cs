@@ -8,7 +8,7 @@ using System.Threading;
 using System.Threading.Tasks;
 
 
-namespace DLLMain
+namespace AppDLL
 {
     internal class db_序列号
     {
@@ -56,6 +56,9 @@ namespace DLLMain
 
                  });
             };
+
+
+
 
         }
 
