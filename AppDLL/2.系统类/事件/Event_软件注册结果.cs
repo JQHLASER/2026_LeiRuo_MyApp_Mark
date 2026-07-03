@@ -1,4 +1,5 @@
-﻿using QF_WinForm_26;
+﻿using DLLMain;
+using QF_WinForm_26;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -56,6 +57,8 @@ namespace AppDLL
 
                 //});
 
+                db_序列号.初始化();
+                QF_SqlSugar_26.SqlSugar_DB_封装.初始化(1000 * 10);
 
             }
             //未注册

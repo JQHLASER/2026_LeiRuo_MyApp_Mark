@@ -9,10 +9,20 @@ namespace AppDLL
 {
     internal class 系统设置
     {
+           
         public class _cfg_
         {
-          
+            public string Url { set; get; } = "http://58.216.251.76:5010/Httphandler/Z/Sunyo/PenMa/GetPenMaContent.ashx?MachiningId=";
+
+
+            /// <summary>
+            /// 最后一次扫码的订单号
+            /// </summary>
+            public string 工单号 { set; get; } = "";
+ 
+            public Http_数据._values_ MesValue { set; get; } = new Http_数据._values_();      
         }
+
         internal static _cfg_ _参数 = new _cfg_();
         internal static (bool s, string msgErr) 读写参数(ushort model)
         {

@@ -37,12 +37,17 @@
             this.uiPanel_工作区左 = new Sunny.UI.UIPanel();
             this.uiPanel_工作区中 = new Sunny.UI.UIPanel();
             this.uiPanel_激光图像 = new Sunny.UI.UIPanel();
-            this.uiPanel_工作区右 = new Sunny.UI.UIPanel();
             this.uiPanel_Log日志 = new Sunny.UI.UIPanel();
+            this.uiPanel_工作区右 = new Sunny.UI.UIPanel();
+            this.uiLabel_加工信息 = new Sunny.UI.UILabel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.ui_Button2_激光模板 = new Sunny.ui_Button2();
+            this.ui_Button2_扫码 = new Sunny.ui_Button2();
             this.uiPanel_加工显示条 = new Sunny.UI.UIPanel();
             this.tableLayoutPanel_工作区.SuspendLayout();
             this.uiPanel_工作区中.SuspendLayout();
             this.uiPanel_工作区右.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // ui_功能栏1
@@ -62,6 +67,7 @@
             this.ui_功能栏1.Name = "ui_功能栏1";
             this.ui_功能栏1.Size = new System.Drawing.Size(1000, 50);
             this.ui_功能栏1.TabIndex = 8;
+            this.ui_功能栏1.Title = "AutoControl";
             // 
             // menuStrip_菜单
             // 
@@ -133,6 +139,7 @@
             // 
             this.uiPanel_工作区中.BackColor = System.Drawing.Color.Transparent;
             this.uiPanel_工作区中.Controls.Add(this.uiPanel_激光图像);
+            this.uiPanel_工作区中.Controls.Add(this.uiPanel_Log日志);
             this.uiPanel_工作区中.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel_工作区中.FillColor = System.Drawing.Color.WhiteSmoke;
             this.uiPanel_工作区中.FillDisableColor = System.Drawing.Color.Transparent;
@@ -150,7 +157,7 @@
             // 
             // uiPanel_激光图像
             // 
-            this.uiPanel_激光图像.Dock = System.Windows.Forms.DockStyle.Top;
+            this.uiPanel_激光图像.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel_激光图像.FillColor = System.Drawing.Color.Black;
             this.uiPanel_激光图像.Font = new System.Drawing.Font("微软雅黑", 11.89565F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.uiPanel_激光图像.ForeColor = System.Drawing.Color.White;
@@ -161,16 +168,36 @@
             this.uiPanel_激光图像.Padding = new System.Windows.Forms.Padding(2, 1, 1, 1);
             this.uiPanel_激光图像.RadiusSides = Sunny.UI.UICornerRadiusSides.None;
             this.uiPanel_激光图像.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel_激光图像.Size = new System.Drawing.Size(592, 497);
+            this.uiPanel_激光图像.Size = new System.Drawing.Size(592, 368);
             this.uiPanel_激光图像.Style = Sunny.UI.UIStyle.Custom;
             this.uiPanel_激光图像.StyleCustomMode = true;
             this.uiPanel_激光图像.TabIndex = 1;
             this.uiPanel_激光图像.Text = "打标卡未初始化";
             // 
+            // uiPanel_Log日志
+            // 
+            this.uiPanel_Log日志.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.uiPanel_Log日志.FillColor = System.Drawing.Color.White;
+            this.uiPanel_Log日志.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.uiPanel_Log日志.Location = new System.Drawing.Point(0, 368);
+            this.uiPanel_Log日志.Margin = new System.Windows.Forms.Padding(0);
+            this.uiPanel_Log日志.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiPanel_Log日志.Name = "uiPanel_Log日志";
+            this.uiPanel_Log日志.Padding = new System.Windows.Forms.Padding(2);
+            this.uiPanel_Log日志.RadiusSides = Sunny.UI.UICornerRadiusSides.None;
+            this.uiPanel_Log日志.RectColor = System.Drawing.Color.Gainsboro;
+            this.uiPanel_Log日志.RectDisableColor = System.Drawing.Color.Gainsboro;
+            this.uiPanel_Log日志.Size = new System.Drawing.Size(592, 185);
+            this.uiPanel_Log日志.Style = Sunny.UI.UIStyle.Custom;
+            this.uiPanel_Log日志.StyleCustomMode = true;
+            this.uiPanel_Log日志.TabIndex = 3;
+            this.uiPanel_Log日志.Text = "Log";
+            // 
             // uiPanel_工作区右
             // 
             this.uiPanel_工作区右.BackColor = System.Drawing.Color.Transparent;
-            this.uiPanel_工作区右.Controls.Add(this.uiPanel_Log日志);
+            this.uiPanel_工作区右.Controls.Add(this.uiLabel_加工信息);
+            this.uiPanel_工作区右.Controls.Add(this.panel1);
             this.uiPanel_工作区右.Controls.Add(this.uiPanel_加工显示条);
             this.uiPanel_工作区右.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel_工作区右.FillColor = System.Drawing.Color.WhiteSmoke;
@@ -187,24 +214,71 @@
             this.uiPanel_工作区右.TabIndex = 2;
             this.uiPanel_工作区右.Text = null;
             // 
-            // uiPanel_Log日志
+            // uiLabel_加工信息
             // 
-            this.uiPanel_Log日志.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiPanel_Log日志.FillColor = System.Drawing.Color.White;
-            this.uiPanel_Log日志.Font = new System.Drawing.Font("微软雅黑", 9F);
-            this.uiPanel_Log日志.Location = new System.Drawing.Point(0, 0);
-            this.uiPanel_Log日志.Margin = new System.Windows.Forms.Padding(0);
-            this.uiPanel_Log日志.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiPanel_Log日志.Name = "uiPanel_Log日志";
-            this.uiPanel_Log日志.Padding = new System.Windows.Forms.Padding(2);
-            this.uiPanel_Log日志.RadiusSides = Sunny.UI.UICornerRadiusSides.None;
-            this.uiPanel_Log日志.RectColor = System.Drawing.Color.Gainsboro;
-            this.uiPanel_Log日志.RectDisableColor = System.Drawing.Color.Gainsboro;
-            this.uiPanel_Log日志.Size = new System.Drawing.Size(296, 513);
-            this.uiPanel_Log日志.Style = Sunny.UI.UIStyle.Custom;
-            this.uiPanel_Log日志.StyleCustomMode = true;
-            this.uiPanel_Log日志.TabIndex = 3;
-            this.uiPanel_Log日志.Text = "Log";
+            this.uiLabel_加工信息.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiLabel_加工信息.Font = new System.Drawing.Font("Cascadia Code", 11.26957F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiLabel_加工信息.Location = new System.Drawing.Point(0, 76);
+            this.uiLabel_加工信息.Name = "uiLabel_加工信息";
+            this.uiLabel_加工信息.Size = new System.Drawing.Size(296, 437);
+            this.uiLabel_加工信息.Style = Sunny.UI.UIStyle.Custom;
+            this.uiLabel_加工信息.TabIndex = 3;
+            this.uiLabel_加工信息.Text = "uiLabel1";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.ui_Button2_激光模板);
+            this.panel1.Controls.Add(this.ui_Button2_扫码);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Padding = new System.Windows.Forms.Padding(5);
+            this.panel1.Size = new System.Drawing.Size(296, 76);
+            this.panel1.TabIndex = 2;
+            // 
+            // ui_Button2_激光模板
+            // 
+            this.ui_Button2_激光模板.BackColor = System.Drawing.Color.Transparent;
+            this.ui_Button2_激光模板.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ui_Button2_激光模板.Location = new System.Drawing.Point(113, 5);
+            this.ui_Button2_激光模板.Name = "ui_Button2_激光模板";
+            this.ui_Button2_激光模板.Padding = new System.Windows.Forms.Padding(5);
+            this.ui_Button2_激光模板.Radius_圆角 = 5;
+            this.ui_Button2_激光模板.Size = new System.Drawing.Size(108, 66);
+            this.ui_Button2_激光模板.TabIndex = 1;
+            this.ui_Button2_激光模板.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ui_Button2_激光模板.Text文本 = "激光模板";
+            this.ui_Button2_激光模板.文本颜色 = System.Drawing.Color.White;
+            this.ui_Button2_激光模板.背景颜色 = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            this.ui_Button2_激光模板.背景颜色_鼠标按下 = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(131)))), ((int)(((byte)(229)))));
+            this.ui_Button2_激光模板.背景颜色_鼠标移上 = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(168)))), ((int)(((byte)(255)))));
+            this.ui_Button2_激光模板.背景颜色_鼠标选中 = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(131)))), ((int)(((byte)(229)))));
+            this.ui_Button2_激光模板.边框颜色 = System.Drawing.Color.Silver;
+            this.ui_Button2_激光模板.边框颜色_鼠标按下 = System.Drawing.Color.Silver;
+            this.ui_Button2_激光模板.边框颜色_鼠标移上 = System.Drawing.Color.Silver;
+            this.ui_Button2_激光模板.边框颜色_鼠标选中 = System.Drawing.Color.Silver;
+            // 
+            // ui_Button2_扫码
+            // 
+            this.ui_Button2_扫码.BackColor = System.Drawing.Color.Transparent;
+            this.ui_Button2_扫码.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ui_Button2_扫码.Location = new System.Drawing.Point(5, 5);
+            this.ui_Button2_扫码.Name = "ui_Button2_扫码";
+            this.ui_Button2_扫码.Padding = new System.Windows.Forms.Padding(5);
+            this.ui_Button2_扫码.Radius_圆角 = 5;
+            this.ui_Button2_扫码.Size = new System.Drawing.Size(108, 66);
+            this.ui_Button2_扫码.TabIndex = 0;
+            this.ui_Button2_扫码.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ui_Button2_扫码.Text文本 = "扫码";
+            this.ui_Button2_扫码.文本颜色 = System.Drawing.Color.White;
+            this.ui_Button2_扫码.背景颜色 = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            this.ui_Button2_扫码.背景颜色_鼠标按下 = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(131)))), ((int)(((byte)(229)))));
+            this.ui_Button2_扫码.背景颜色_鼠标移上 = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(168)))), ((int)(((byte)(255)))));
+            this.ui_Button2_扫码.背景颜色_鼠标选中 = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(131)))), ((int)(((byte)(229)))));
+            this.ui_Button2_扫码.边框颜色 = System.Drawing.Color.Silver;
+            this.ui_Button2_扫码.边框颜色_鼠标按下 = System.Drawing.Color.Silver;
+            this.ui_Button2_扫码.边框颜色_鼠标移上 = System.Drawing.Color.Silver;
+            this.ui_Button2_扫码.边框颜色_鼠标选中 = System.Drawing.Color.Silver;
             // 
             // uiPanel_加工显示条
             // 
@@ -243,6 +317,7 @@
             this.tableLayoutPanel_工作区.ResumeLayout(false);
             this.uiPanel_工作区中.ResumeLayout(false);
             this.uiPanel_工作区右.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -260,5 +335,9 @@
         internal System.Windows.Forms.MenuStrip menuStrip_菜单;
         internal Sunny.UI.UIPanel uiPanel_Log日志;
         public Sunny.UI.UIPanel uiPanel_激光图像;
+        private System.Windows.Forms.Panel panel1;
+        private Sunny.ui_Button2 ui_Button2_激光模板;
+        private Sunny.ui_Button2 ui_Button2_扫码;
+        internal Sunny.UI.UILabel uiLabel_加工信息;
     }
 }

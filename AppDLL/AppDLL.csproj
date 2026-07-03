@@ -143,6 +143,25 @@
     <Compile Include="3.加工类\加工类_.cs" />
     <Compile Include="4.工业类\Zaxis\Zaxis_运动轴.cs" />
     <Compile Include="5.激光类\LaserMark.cs" />
+    <Compile Include="6.定制\CSV.cs" />
+    <Compile Include="6.定制\http\http_.cs" />
+    <Compile Include="6.定制\http\Http_数据.cs" />
+    <Compile Include="6.定制\序列号\Form_序列号.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="6.定制\序列号\Form_序列号.Designer.cs">
+      <DependentUpon>Form_序列号.cs</DependentUpon>
+    </Compile>
+    <Compile Include="6.定制\序列号\序列号.cs" />
+    <Compile Include="6.定制\扫码\Form_扫码.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="6.定制\扫码\Form_扫码.Designer.cs">
+      <DependentUpon>Form_扫码.cs</DependentUpon>
+    </Compile>
+    <Compile Include="6.定制\数据库\db_序列号.cs" />
+    <Compile Include="6.定制\数据库\表.cs" />
+    <Compile Include="6.定制\显示加工信息.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="2.系统类\接口_对主程序\开机自检.cs" />
     <Compile Include="2.系统类\语言\LanguageList_.cs" />
@@ -161,6 +180,15 @@
     <EmbeddedResource Include="2.系统类\系统设置\Form_系统设置.resx">
       <DependentUpon>Form_系统设置.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="6.定制\序列号\Form_序列号.resx">
+      <DependentUpon>Form_序列号.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="6.定制\扫码\Form_扫码.resx">
+      <DependentUpon>Form_扫码.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="6.定制\数据库\Sn.db" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

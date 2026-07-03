@@ -6,10 +6,12 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static AppDLL.表;
 
 namespace AppDLL
 {
@@ -52,6 +54,9 @@ namespace AppDLL
             this.Load += async (s, e) => await On_Load(s, e);
             this.FormClosing += async (s, e) => await On_Closeing(s, e);
             this.KeyDown += (s, e) => On_keyDown(s, e);
+
+            this.ui_Button2_激光模板._Button.Click += (s, e) => 打开激光模板();
+            this.ui_Button2_扫码._Button.Click += (s, e) => 扫码();
 
 
             显示.加工状态(Color.White, "");
@@ -130,9 +135,9 @@ namespace AppDLL
                 Help_软件信息.Show();
             }
             else if (e.KeyCode == Keys.F10
-                      && new QF_WinForm_26.软件类().Win_密码输入框(功能._密码.系统设置 ) == DialogResult.Yes)
+                      && new QF_WinForm_26.软件类().Win_密码输入框(功能._密码.系统设置) == DialogResult.Yes)
             {
-                using (Form_系统设置 forms=new Form_系统设置 ())
+                using (Form_系统设置 forms = new Form_系统设置())
                 {
                     forms.ShowDialog();
                 }
@@ -151,7 +156,97 @@ namespace AppDLL
         #endregion
 
 
+        #region 本地方法...定制
 
+        void 打开激光模板()
+        {
+            菜单_激光.On_打开激光模板();
+        }
+
+        void 扫码()
+        {
+            if (!Err_.系统报警(out string msgErr, false) || !Err_.系统忙(out msgErr, false))
+            {
+                MessageBox.Show(msgErr, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            using (Form_扫码 forms = new Form_扫码())
+            {
+                forms.uiTextBox1.KeyDown += async (s, e) =>
+                {
+                    if (e.KeyCode == Keys.Enter)
+                    {
+                        var barcode = forms.uiTextBox1.Text.Trim();
+                        forms.uiTextBox1.Clear();
+                        if (string.IsNullOrEmpty(barcode))
+                        {
+                            MessageBox.Show("请扫码", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+                        Log.Add($"扫码: {barcode}");
+                        var work = new string[]
+                         {
+                               "http",
+                               "getDb",
+                         };
+
+                        bool rt = true;
+                        string msg = "";
+                        string sn = "";
+                        foreach (var item in work)
+                        {
+                            if (!rt)
+                                break;
+                            else if (item == "http")
+                            {
+                                var rthttp = await http_.请求(barcode);
+                                rt = rthttp.s;
+                                msg = rthttp.m;
+                                系统设置._参数.MesValue = rthttp.cfg.result;
+                            }
+                            else if (item == "getDb")
+                            {
+                                this.Text = 系统设置._参数.工单号;
+                                var m = 序列号.查询序列号(系统设置._参数.工单号);
+                                rt = m.s;
+                                msg = m.m;
+                                sn = m.sn;
+                            }
+
+                        }
+
+                        if (rt)
+                        {
+                            显示加工信息.显示Mes信息(sn);
+                            系统设置.读写参数(0);
+                            加工类_._加工.修改变量信息(sn, 系统设置._参数.MesValue);
+                            MessageBox.Show("成功");
+                            return;
+                        }
+                        else
+                        {
+                            MessageBox.Show($"失败,\r\n{msg}", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+
+
+                    }
+                };
+
+                forms.uiButton_确定.Click += (s, e) =>
+                {  
+                    序列号.窗体_设置序列号(系统设置._参数.工单号);  
+                };
+                Log.Add($"...进入扫码窗体");
+                forms.ShowDialog();
+                Log.Add($"...退出扫码窗体");
+            }
+
+        }
+
+
+        #endregion
 
     }
 }

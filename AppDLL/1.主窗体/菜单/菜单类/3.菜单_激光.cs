@@ -59,12 +59,7 @@ namespace AppDLL
 
             _打开.Click += (s, e) =>
             {
-                if (!Err_.系统报警(out string msgErr, false) || !Err_.系统忙(out msgErr, false))
-                {
-                    MessageBox.Show(msgErr, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-                LaserMark.打开激光模板();
+                On_打开激光模板();
             };
 
             _复位.Click += (s, e) =>
@@ -125,7 +120,7 @@ namespace AppDLL
         {
             Form_Main.forms.Invoke((Action)(() =>
             {
-                激光_.Visible  = true;
+                激光_.Visible = true;
 
                 switch (权限)
                 {
@@ -148,13 +143,25 @@ namespace AppDLL
                         break;
                     case QF_WinForm_26._LoginUserType_.操作员:
 
-                        激光_.Visible  = false;
+                        激光_.Visible = false;
 
                         break;
                 }
 
             }));
         }
+
+
+        internal  static void On_打开激光模板()
+        {
+            if (!Err_.系统报警(out string msgErr, false) || !Err_.系统忙(out msgErr, false))
+            {
+                MessageBox.Show(msgErr, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            LaserMark.打开激光模板();
+        }
+
 
 
         #endregion
