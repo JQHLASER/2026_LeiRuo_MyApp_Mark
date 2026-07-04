@@ -19,12 +19,29 @@ namespace AppDLL
             string fileCsv = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "CSV");
             string file工单 = Path.Combine(fileCsv, 工单号);
 
-
             new QF_MainClass_26.文件_文件夹().文件夹_新建(fileCsv, out string msgErr);
             new QF_MainClass_26.文件_文件夹().文件夹_新建(file工单, out msgErr);
 
-
             string pathCsv = Path.Combine(file工单, $"{DateTime.Now.ToString("yyyy-MM-dd")}.csv");
+
+
+
+
+            #region 备份
+
+            string fileCsv_BenFen = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "beifen");
+            string file工单_beifeng = Path.Combine(fileCsv_BenFen, 工单号);
+
+            new QF_MainClass_26.文件_文件夹().文件夹_新建(fileCsv_BenFen, out msgErr);
+            new QF_MainClass_26.文件_文件夹().文件夹_新建(file工单_beifeng, out msgErr);
+
+            string pathCsv_Beifen = Path.Combine(file工单_beifeng, $"{DateTime.Now.ToString("yyyy-MM-dd")}.csv");
+
+
+            #endregion
+
+
+
 
             if (!new QF_MainClass_26.文件_文件夹().文件_是否存在(pathCsv))
             {
@@ -63,6 +80,9 @@ namespace AppDLL
             lstStr.Add(lst.ToArray());
 
             var rt = await csv_sys.Write(pathCsv, lstStr, true, Encoding.UTF8);
+            await csv_sys.Write(pathCsv_Beifen, lstStr, true, Encoding.UTF8);  //备份
+
+
             string show = rt.state ? $"保存csv成功" : $"保存csv失败,{rt.msgErr}";
             Log.Add(rt.state, show);
             return rt;

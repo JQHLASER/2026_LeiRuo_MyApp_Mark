@@ -16,7 +16,7 @@ namespace AppDLL
         internal static QF_WinForm_26.ui_Log ui_log = new QF_WinForm_26.ui_Log()
         {
             Dock = DockStyle.Fill,
-            _显示时间 = false,
+            _显示时间 = true,
             _最大显示行数 = 功能._FormMain.日志栏_显示行数,
             _BackColor = 功能._FormMain.日志栏_背景颜色,
             _ItemHeight = 功能._FormMain.日志栏_行高,
