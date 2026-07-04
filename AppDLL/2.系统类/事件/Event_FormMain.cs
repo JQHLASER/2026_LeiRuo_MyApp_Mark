@@ -11,7 +11,7 @@ namespace AppDLL
 
         internal static void On_Load()
         {    
-            系统设置.读写参数(1);
+          
 
             db_序列号.Event_初始化成功 += () =>
             {

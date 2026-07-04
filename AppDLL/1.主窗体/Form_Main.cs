@@ -1,4 +1,5 @@
 ﻿
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -58,7 +59,7 @@ namespace AppDLL
             this.ui_Button2_激光模板._Button.Click += (s, e) => 打开激光模板();
             this.ui_Button2_扫码._Button.Click += (s, e) => 扫码();
 
-
+            this.uiLabel_加工信息.Text = "";
             显示.加工状态(Color.White, "");
             Size_FormMain.读写参数(1);
 
@@ -205,7 +206,8 @@ namespace AppDLL
                                 var rthttp = await http_.请求(barcode);
                                 rt = rthttp.s;
                                 msg = rthttp.m;
-                                系统设置._参数.MesValue = rthttp.cfg.result;
+                                //系统设置._参数.MesValue = rthttp.cfg.result;
+                           
                             }
                             else if (item == "getDb")
                             {
@@ -220,8 +222,8 @@ namespace AppDLL
 
                         if (rt)
                         {
+                            // 系统设置.读写参数(0);
                             显示加工信息.显示Mes信息(sn);
-                            系统设置.读写参数(0);
                             加工类_._加工.修改变量信息(sn, 系统设置._参数.MesValue);
                             MessageBox.Show("成功");
                             return;
@@ -237,8 +239,8 @@ namespace AppDLL
                 };
 
                 forms.uiButton_确定.Click += (s, e) =>
-                {  
-                    序列号.窗体_设置序列号(系统设置._参数.工单号);  
+                {
+                    序列号.窗体_设置序列号(系统设置._参数.工单号);
                 };
                 Log.Add($"...进入扫码窗体");
                 forms.ShowDialog();

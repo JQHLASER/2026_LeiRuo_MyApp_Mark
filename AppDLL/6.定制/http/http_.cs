@@ -61,6 +61,7 @@ namespace AppDLL
             if (rt)
             {
                 系统设置._参数.工单号 = barcode;
+                系统设置._参数.MesValue = rtMes.cfg.result;
                 系统设置.读写参数(0);
             }
 
