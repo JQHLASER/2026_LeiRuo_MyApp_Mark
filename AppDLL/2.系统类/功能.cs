@@ -76,7 +76,7 @@ namespace AppDLL
      
 
 
-        internal static QF_MainClass_26._软件授权_注册类型_ _软件注册类型 = QF_MainClass_26._软件授权_注册类型_.加密狗;
+        internal static QF_MainClass_26._软件授权_注册类型_ _软件注册类型 = QF_MainClass_26._软件授权_注册类型_.本地;
         internal static QF_MainClass_26._em_DogKeyType_ _加密狗类型 = QF_MainClass_26._em_DogKeyType_.TW_普通;
         /// <summary>
         /// 已经包含了 代理

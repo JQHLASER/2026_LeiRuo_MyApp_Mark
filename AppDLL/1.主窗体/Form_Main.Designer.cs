@@ -40,14 +40,14 @@
             this.uiPanel_Log日志 = new Sunny.UI.UIPanel();
             this.uiPanel_工作区右 = new Sunny.UI.UIPanel();
             this.uiLabel_加工信息 = new Sunny.UI.UILabel();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel_操作按钮 = new System.Windows.Forms.Panel();
             this.ui_Button2_激光模板 = new Sunny.ui_Button2();
             this.ui_Button2_扫码 = new Sunny.ui_Button2();
             this.uiPanel_加工显示条 = new Sunny.UI.UIPanel();
             this.tableLayoutPanel_工作区.SuspendLayout();
             this.uiPanel_工作区中.SuspendLayout();
             this.uiPanel_工作区右.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.panel_操作按钮.SuspendLayout();
             this.SuspendLayout();
             // 
             // ui_功能栏1
@@ -197,7 +197,7 @@
             // 
             this.uiPanel_工作区右.BackColor = System.Drawing.Color.Transparent;
             this.uiPanel_工作区右.Controls.Add(this.uiLabel_加工信息);
-            this.uiPanel_工作区右.Controls.Add(this.panel1);
+            this.uiPanel_工作区右.Controls.Add(this.panel_操作按钮);
             this.uiPanel_工作区右.Controls.Add(this.uiPanel_加工显示条);
             this.uiPanel_工作区右.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel_工作区右.FillColor = System.Drawing.Color.WhiteSmoke;
@@ -225,16 +225,16 @@
             this.uiLabel_加工信息.TabIndex = 3;
             this.uiLabel_加工信息.Text = "uiLabel1";
             // 
-            // panel1
+            // panel_操作按钮
             // 
-            this.panel1.Controls.Add(this.ui_Button2_激光模板);
-            this.panel1.Controls.Add(this.ui_Button2_扫码);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(5);
-            this.panel1.Size = new System.Drawing.Size(296, 76);
-            this.panel1.TabIndex = 2;
+            this.panel_操作按钮.Controls.Add(this.ui_Button2_激光模板);
+            this.panel_操作按钮.Controls.Add(this.ui_Button2_扫码);
+            this.panel_操作按钮.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel_操作按钮.Location = new System.Drawing.Point(0, 0);
+            this.panel_操作按钮.Name = "panel_操作按钮";
+            this.panel_操作按钮.Padding = new System.Windows.Forms.Padding(5);
+            this.panel_操作按钮.Size = new System.Drawing.Size(296, 76);
+            this.panel_操作按钮.TabIndex = 2;
             // 
             // ui_Button2_激光模板
             // 
@@ -317,7 +317,7 @@
             this.tableLayoutPanel_工作区.ResumeLayout(false);
             this.uiPanel_工作区中.ResumeLayout(false);
             this.uiPanel_工作区右.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
+            this.panel_操作按钮.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -335,9 +335,9 @@
         internal System.Windows.Forms.MenuStrip menuStrip_菜单;
         internal Sunny.UI.UIPanel uiPanel_Log日志;
         public Sunny.UI.UIPanel uiPanel_激光图像;
-        private System.Windows.Forms.Panel panel1;
         private Sunny.ui_Button2 ui_Button2_激光模板;
         private Sunny.ui_Button2 ui_Button2_扫码;
         internal Sunny.UI.UILabel uiLabel_加工信息;
+        internal System.Windows.Forms.Panel panel_操作按钮;
     }
 }

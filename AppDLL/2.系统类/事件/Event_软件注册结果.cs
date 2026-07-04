@@ -1,4 +1,4 @@
-﻿ 
+﻿
 using QF_WinForm_26;
 using System;
 using System.Collections.Generic;
@@ -46,7 +46,7 @@ namespace AppDLL
                 Event_注册结果?.Invoke(_注册结果);
 
                 LaserMark.初始化();
-                Zaxis_ .初始化 ();
+                Zaxis_.初始化();
 
 
                 //Task.Run(() =>
@@ -67,10 +67,13 @@ namespace AppDLL
                 _注册结果 = _em_注册状态_.未注册;
                 Event_注册结果?.Invoke(_注册结果);
 
-                //Form_Main.forms.Invoke((Action)(() =>
-                // { 
+                Form_Main.forms.Invoke((Action)(() =>
+                 {
 
-                // }));
+                     Form_Main.forms.panel_操作按钮.Enabled = false;
+
+
+                 }));
 
 
             }
